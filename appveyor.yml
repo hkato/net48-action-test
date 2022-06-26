@@ -1,7 +1,7 @@
 version: 1.1.{build}
 image: Visual Studio 2022
 before_build:
-- nuget restore
+- MSBuild.exe -t:restore -p:RestorePackagesConfig=true
 build:
   verbosity: minimal
 test_script:
