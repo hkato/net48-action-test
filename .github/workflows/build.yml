@@ -1,4 +1,4 @@
-name: Build - GitHub Actions
+name: build
 
 on: [push]
 
