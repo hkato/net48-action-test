@@ -13,7 +13,7 @@ jobs:
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.1.1
       - name: Restore packages
-        uses: MSBuild.exe -t:restore -p:RestorePackagesConfig=true
+        run: MSBuild.exe -t:restore -p:RestorePackagesConfig=true
       - name: Build
-        uses: MSBuild.exe
+        run: MSBuild.exe
 
