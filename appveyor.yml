@@ -1,0 +1,8 @@
+version: 1.1.{build}
+image: Visual Studio 2022
+before_build:
+- nuget restore
+build:
+  verbosity: minimal
+test_script:
+- & $Env:USERPROFILE\.nuget\packages\machine.specifications.runner.console\1.0.0\tools\mspec-clr4.exe ClassLibraryTest\bin\Debug\ClassLibraryTest.dll
