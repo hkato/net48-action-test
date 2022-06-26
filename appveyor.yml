@@ -5,4 +5,4 @@ before_build:
 build:
   verbosity: minimal
 test_script:
-- ps: $Env:USERPROFILE\.nuget\packages\machine.specifications.runner.console\1.0.0\tools\mspec-clr4.exe ClassLibraryTest\bin\Debug\ClassLibraryTest.dll
+- ps: C:\Users\appveyor\.nuget\packages\machine.specifications.runner.console\1.0.0\tools\mspec-clr4.exe ClassLibraryTest\bin\Debug\ClassLibraryTest.dll
