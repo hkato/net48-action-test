@@ -16,9 +16,5 @@ jobs:
         run: MSBuild.exe -t:restore -p:RestorePackagesConfig=true
       - name: Build
         run: MSBuild.exe
-
-  test:
-    needs: build
-
-    steps:
-      - run: .\packages\Machine.Specifications.Runner.Console.1.0.0\tools\mspec-clr4.exe .\ClassLibraryTest\bin\Debug\ClassLibraryTest.dll
+      - name: Test
+        run: .\packages\Machine.Specifications.Runner.Console.1.0.0\tools\mspec-clr4.exe .\ClassLibraryTest\bin\Debug\ClassLibraryTest.dll
