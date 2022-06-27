@@ -21,4 +21,4 @@ jobs:
       - name: Build
         run: MSBuild.exe
       - name: Test
-        run: $MSPEC_EXE $MSPEC_TEST_DLL
+        run: . $MSPEC_EXE $MSPEC_TEST_DLL
