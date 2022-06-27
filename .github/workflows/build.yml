@@ -3,7 +3,7 @@ name: build
 on: [push]
 
 env:
-  MSSEC_EXE: .\packages\Machine.Specifications.Runner.Console.1.0.0\tools\mspec-clr4.exe
+  MSPEC_EXE: .\packages\Machine.Specifications.Runner.Console.1.0.0\tools\mspec-clr4.exe
   MSPEC_TEST_DLL: .\ClassLibraryTest\bin\Debug\ClassLibraryTest.dll
 
 jobs:
@@ -21,4 +21,4 @@ jobs:
       - name: Build
         run: MSBuild.exe
       - name: Test
-        run: $MSEC_EXE $MSPEC_TEST_DLL
+        run: $MSPEC_EXE $MSPEC_TEST_DLL
