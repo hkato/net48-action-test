@@ -20,5 +20,12 @@ jobs:
         run: MSBuild.exe -t:restore -p:RestorePackagesConfig=true
       - name: Build
         run: MSBuild.exe
+
+  test:
+    needs: build
+
+    runs-on: windows-2022
+
+    steps:
       - name: Test
         run: . $Env:MSPEC_EXE $Env:MSPEC_TEST_DLL
