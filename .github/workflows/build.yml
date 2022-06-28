@@ -22,4 +22,4 @@ jobs:
       - name: Unit test with MSpec
         run: |
           $ConsoleRunnerPackage = Get-ChildItem .\packages -Filter Machine.Specifications.Runner.Console.*
-          . .\packages\$ConsoleRunnerPackage\tools\mspec-clr4.exe $Env:MSPEC_TEST_DLL
+          . $ConsoleRunnerPackage\tools\mspec-clr4.exe $Env:MSPEC_TEST_DLL
