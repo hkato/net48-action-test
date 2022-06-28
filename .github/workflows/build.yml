@@ -3,7 +3,6 @@ name: build
 on: [push]
 
 env:
-  MSPEC_EXE: .\packages\Machine.Specifications.Runner.Console.1.0.0\tools\mspec-clr4.exe
   MSPEC_TEST_DLL: .\ClassLibraryTest\bin\Debug\ClassLibraryTest.dll
 
 jobs:
@@ -14,11 +13,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Add MSBuild to PATH
+      - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.1
       - name: Restore packages
         run: MSBuild.exe -t:restore -p:RestorePackagesConfig=true
       - name: Build
         run: MSBuild.exe
       - name: Unit test with MSpec
-        run: . $Env:MSPEC_EXE $Env:MSPEC_TEST_DLL
+        run: |
+          $ConsoleRunnerPackage = Get-ChildItem .\packages -Filter Machine.Specifications.Runner.Console.*
+          . .\packages\$ConsoleRunnerPackage\tools\mspec-clr4.exe $Env:MSPEC_TEST_DLL
